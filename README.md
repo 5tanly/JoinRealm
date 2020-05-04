@@ -45,7 +45,7 @@ Follow these steps and you will be well on your way
 	triggerOnFirstLogin=true
 	script=joinrealm.cs
 
-##### 7. Enable and make sure your realm is set properly in joinrealm.ini
+##### 7. Enable and make sure your realm is set properly in joinrealm.ini make sure there are no spaces before or after the equals sign
 
 	[JoinRealm]
 	enabled=true
