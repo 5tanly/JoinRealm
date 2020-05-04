@@ -22,28 +22,30 @@ Follow these steps and you will be well on your way
 
 ##### 1. Download the files from the github repo
 
-##### 2. Make sure [ScriptScheduler] is enabled in MinecraftClient.ini
+##### 2. Place the files in the directory where you run MinecraftClient.exe from
+
+##### 3. Make sure [ScriptScheduler] is enabled in MinecraftClient.ini
 
 	[ScriptScheduler]
 	enabled=true
 	tasksfile=tasks.ini
 
-##### 3 .Make sure [AntiAFK] is disabled in MinecraftClient.ini (or at least not spamming /server [...])
+##### 4 .Make sure [AntiAFK] is disabled in MinecraftClient.ini (or at least not spamming /server [...])
 
 	[AntiAFK]
 	enabled=false
 
-##### 4. Make sure botmessagedelay is set to 1 in MinecraftClient.ini
+##### 5. Make sure botmessagedelay is set to 1 in MinecraftClient.ini
 
 	botmessagedelay=1
 
-##### 5. Add the following tasks to tasks.ini
+##### 6. Add the following tasks to tasks.ini
 
 	[Task]
 	triggerOnFirstLogin=true
 	script=joinrealm.cs
 
-##### 6. Enable and make sure your realm is set properly in joinrealm.ini
+##### 7. Enable and make sure your realm is set properly in joinrealm.ini
 
 	[JoinRealm]
 	enabled=true
