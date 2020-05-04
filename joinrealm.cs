@@ -13,9 +13,9 @@ public class JoinRealm : ChatBot{
   public void GetSettings(){
     //Get user defined settings from joinrealm.ini
     string[] Lines = File.ReadAllLines(@"joinrealm.ini");
-    enabled = Lines[1].Remove(0,8);
-    realm = Lines[2].Remove(0,6);
-    realmCapital = char.ToUpper(realm[0]) + realm.Substring(1);
+    enabled = Lines[1].Remove(0,8).ToLower();
+    realm = Lines[2].Remove(0,6).ToLower();
+    realmCapital = char.ToUpper(realm[0]) + realm.Substring(1).ToLower();
   }
 
   private bool _joinedRealm = false;
