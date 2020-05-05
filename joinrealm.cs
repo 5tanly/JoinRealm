@@ -8,14 +8,12 @@ public class JoinRealm : ChatBot{
 
   string enabled = string.Empty;
   string realm = string.Empty;
-  string realmCapital = string.Empty;
 
   public void GetSettings(){
     //Get user defined settings from joinrealm.ini
     string[] Lines = File.ReadAllLines(@"joinrealm.ini");
     enabled = Lines[1].Remove(0,8).ToLower();
     realm = Lines[2].Remove(0,6).ToLower();
-    realmCapital = char.ToUpper(realm[0]) + realm.Substring(1).ToLower();
   }
 
   private bool _joinedRealm = false;
@@ -46,14 +44,13 @@ public class JoinRealm : ChatBot{
       LogToConsole("-------------------------------WARNING-------------------------------");
       LogToConsole("JoinRealm is not enabled, to use it please enable it in joinrealm.ini");
       LogToConsole("---------------------------------------------------------------------");
-      _joinedRealm = true;
       UnloadBot();
     }
   }
 
   public override void GetText(string text){
     text = GetVerbatim(text);
-    if (text =="(!) You have teleported to... "+realmCapital+" Realm!"){
+    if (text =="(!) While you were offline…"){
       //Stop spamming "/server" if the player has already joined the realm.
       LogToConsole("Realm joined!");
       _joinedRealm = true;
