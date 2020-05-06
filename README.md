@@ -20,9 +20,9 @@ Follow these steps and you will be well on your way
 ------------
 
 
-##### 1. Download the files from the github repo
+##### 1. Download the files from the GitHub repo
 
-##### 2. Place the files in the directory where you run MinecraftClient.exe from
+##### 2. Place the files in the directory where you run MinecraftClient.exe from; i.e. working directory
 
 ##### 3. Make sure [ScriptScheduler] is enabled in MinecraftClient.ini
 
@@ -35,11 +35,11 @@ Follow these steps and you will be well on your way
 	[AntiAFK]
 	enabled=false
 
-##### 5. Make sure botmessagedelay is set to 1 in MinecraftClient.ini
+##### 5. Make sure botmessagedelay is set to 1 or less in MinecraftClient.ini
 
 	botmessagedelay=1
 
-##### 6. Add the following tasks to tasks.ini
+##### 6. Add the following tasks to tasks.ini; if tasks.ini does not exist, create it
 
 	[Task]
 	triggerOnFirstLogin=true
