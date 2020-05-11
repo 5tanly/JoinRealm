@@ -21,26 +21,29 @@ public class JoinRealm : ChatBot{
   public void joinLoop(){
     while(true){
       if (_joinedRealm == false){
-        // Checks if _joinedRealm is true or false and starts spamming "/server" if _joinedRealm is false
+        //Checks if _joinedRealm is true or false and starts spamming "/server" if _joinedRealm is false
         SendText("/server "+ realm);
         Thread.Sleep(1000);
       }
       else{
+        //Stops the loop from continuing to run in the background
         break;
       }
     }
   }
 
   public void createThread(){
+    //Set variables and start the loop
+    LogToConsole("Starting loop");
     _joinedRealm = false;
     joinThread  = new Thread(joinLoop);
     joinThread.Start();
-    LogToConsole("Starting loop");
   }
 
   public void killThread(){
-    _joinedRealm = true;
+    //Set variables to stop the loop
     LogToConsole("Stopping loop");
+    _joinedRealm = true;
   }
 
   public override void Initialize(){
@@ -49,13 +52,15 @@ public class JoinRealm : ChatBot{
       LogToConsole("Sucessfully Initialized!");
       LogToConsole("Enabled: "+enabled);
       LogToConsole("Realm: "+realm);
-      //Start spamming "/server"
+      //Start the loop that sends "/server"
       createThread();
     }
     else{
+      //Print to console if the script settings are disabled
       LogToConsole("-------------------------------WARNING-------------------------------");
       LogToConsole("JoinRealm is not enabled, to use it please enable it in joinrealm.ini");
       LogToConsole("---------------------------------------------------------------------");
+      //Unload the script
       UnloadBot();
     }
   }
