@@ -28,7 +28,7 @@ public class JoinRealm : ChatBot{
       }
       else{
         Thread.Sleep(1000);
-        Console.WriteLine("waiting");
+        // Console.WriteLine("waiting");
       }
     }
   }
