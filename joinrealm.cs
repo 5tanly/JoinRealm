@@ -20,9 +20,9 @@ public class JoinRealm : ChatBot{
   private bool _joinedRealm = false;
 
   public void joinLoop(){
+    // Checks if _joinedRealm is true or false and starts spamming "/server" if _joinedRealm is false
     while(true){
       if (_joinedRealm == false){
-        // Checks if _joinedRealm is true or false and starts spamming "/server" if _joinedRealm is false
         SendText("/server "+ realm);
         Thread.Sleep(1000);
       }
