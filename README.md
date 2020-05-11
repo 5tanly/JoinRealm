@@ -22,7 +22,7 @@ Follow these steps and you will be well on your way
 
 ##### 1. Download the files from the GitHub repo
 
-##### 2. Place the files in the directory where you run MinecraftClient.exe from; i.e. working directory
+##### 2. Place the files in the directory where you run MinecraftClient.exe from; i.e. working directory, the only files you need are the .cs and .ini files
 
 ##### 3. Make sure [ScriptScheduler] is enabled in MinecraftClient.ini
 
@@ -50,3 +50,7 @@ Follow these steps and you will be well on your way
 	[JoinRealm]
 	enabled=true
 	realm=skeleton
+	
+## Troubleshooting
+###### I get an error when I join the server and the script doesnt start
+The script was designed around build 275 of [Minecraft Console Client](https://github.com/ORelio/Minecraft-Console-Client), if you use an older version of MCC you may not have all the features that this script take advantage of. Download and run the latest version of MCC to fix this.
