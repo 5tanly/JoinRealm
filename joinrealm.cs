@@ -15,28 +15,14 @@ public class JoinRealm : ChatBot{
     string[] Lines = File.ReadAllLines(@"joinrealm.ini");
     enabled = Lines[1].Remove(0,8).ToLower();
     realm = Lines[2].Remove(0,6).ToLower();
-    // if (enabled == "true"){
-    //   joinLoop  = new Thread(WorkThreadFunction);
-    // }
   }
 
   private bool _joinedRealm = false;
 
-  // public void joinLoop(){
-  //   //Checks if _joinedRealm is true or false and starts spamming "/server" if _joinedRealm is false
-  //   while(true){
-  //     if (_joinedRealm == false){
-  //       SendText("/server "+ realm);
-  //       Thread.Sleep(1000);
-  //     }
-  //     else{
-  //       Thread.Sleep(10000);
-  //     }
-  //   }
-  // }
   public void joinLoop(){
     while(true){
       if (_joinedRealm == false){
+        // Checks if _joinedRealm is true or false and starts spamming "/server" if _joinedRealm is false
         SendText("/server "+ realm);
         Thread.Sleep(1000);
       }
@@ -54,10 +40,8 @@ public class JoinRealm : ChatBot{
       LogToConsole("Enabled: "+enabled);
       LogToConsole("Realm: "+realm);
       //Start spamming "/server"
-      // Thread joinLoop = new Thread(WorkThreadFunction);
       joinThread  = new Thread(joinLoop);
       joinThread.Start();
-      // joinLoop();
     }
     else{
       LogToConsole("-------------------------------WARNING-------------------------------");
@@ -73,13 +57,10 @@ public class JoinRealm : ChatBot{
       //Stop spamming "/server" if the player has already joined the realm.
       LogToConsole("Realm joined!");
       _joinedRealm = true;
-      // joinLoop.Abort();
     }
     else if (text == "(!) You have teleported to Hub Realm!"){
       //Start spamming "/server" if the player has teleported back to hub realm.
       _joinedRealm = false;
-      // Thread joinLoop = new Thread(WorkThreadFunction);
-      // joinLoop.Start();
     }
   }
 }
