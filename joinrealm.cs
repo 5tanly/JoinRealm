@@ -8,7 +8,7 @@ public class JoinRealm : ChatBot{
 
   string enabled = string.Empty;
   string realm = string.Empty;
-  string username = GetUsername();
+  // string username = string.Empty;
   private Thread joinThread;
   private bool _joinedRealm;
 
@@ -53,6 +53,7 @@ public class JoinRealm : ChatBot{
       LogToConsole("Sucessfully Initialized!");
       LogToConsole("Enabled: "+enabled);
       LogToConsole("Realm: "+realm);
+      // username = GetUsername();
       //Start the loop that sends "/server"
       createThread();
     }
@@ -78,11 +79,11 @@ public class JoinRealm : ChatBot{
       LogToConsole("Hub joined!");
       createThread();
     }
-    else if (text == "[" + username + "] -> me] unload"){
-      //Unload script
-      LogToConsole("Unloading script");
-      killThread();
-      UnloadBot();
-    }
+    // else if (text.Contains("[me -> " + username + "] unload") && text[0] == '['){
+    //   //Unload script if you message yourself: (/m {USERNAME} unload joinrealm)
+    //   killThread();
+    //   LogToConsole("Unloading script");
+    //   UnloadBot();
+    // }
   }
 }
