@@ -77,5 +77,9 @@ public class JoinRealm : ChatBot{
       LogToConsole("Hub joined!");
       createThread();
     }
+    else if (text == "[" + username + "] -> me] unload"){
+      //Unload script
+      UnloadBot();
+    }
   }
 }
