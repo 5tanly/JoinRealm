@@ -8,6 +8,7 @@ public class JoinRealm : ChatBot{
 
   string enabled = string.Empty;
   string realm = string.Empty;
+  string username = GetUsername();
   private Thread joinThread;
   private bool _joinedRealm;
 
@@ -79,6 +80,8 @@ public class JoinRealm : ChatBot{
     }
     else if (text == "[" + username + "] -> me] unload"){
       //Unload script
+      LogToConsole("Unloading script");
+      killThread();
       UnloadBot();
     }
   }
